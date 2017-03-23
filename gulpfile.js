@@ -31,7 +31,7 @@ gulp.task('clean', ['lint'], function(cb) {
 **/
 gulp.task('dist', function() {
     return browserify("./iota-browser.js")
-        .require('bignumber.js');
+        .require('bn.js')
         .bundle()
         .pipe(source('iota.js'))
         .pipe(gulp.dest(DEST))
